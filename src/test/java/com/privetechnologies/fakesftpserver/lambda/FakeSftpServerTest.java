@@ -1,4 +1,4 @@
-package com.github.stefanbirkner.fakesftpserver.lambda;
+package com.privetechnologies.fakesftpserver.lambda;
 
 import com.jcraft.jsch.*;
 import org.apache.commons.io.IOUtils;
@@ -17,7 +17,7 @@ import java.util.Vector;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
-import static com.github.stefanbirkner.fakesftpserver.lambda.FakeSftpServer.withSftpServer;
+import static com.privetechnologies.fakesftpserver.lambda.FakeSftpServer.withSftpServer;
 import static com.github.stefanbirkner.fishbowl.Fishbowl.exceptionThrownBy;
 import static com.github.stefanbirkner.fishbowl.Fishbowl.ignoreException;
 import static java.nio.charset.StandardCharsets.UTF_8;

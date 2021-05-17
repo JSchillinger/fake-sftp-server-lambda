@@ -26,7 +26,7 @@ Fake SFTP Server Lambda 2.0.0 which is compatible with Apache SSHD 2.6.0 and
 later.
 
     <dependency>
-      <groupId>com.github.stefanbirkner</groupId>
+      <groupId>com.privetechnologies</groupId>
       <artifactId>fake-sftp-server-lambda</artifactId>
       <version>2.0.0</version>
       <scope>test</scope>
@@ -36,7 +36,7 @@ Users whose projects have a dependency to Apache SSHD with a version before 2.6.
 must use Fake SFTP Server Lambda 1.0.1.
 
     <dependency>
-      <groupId>com.github.stefanbirkner</groupId>
+      <groupId>com.privetechnologies</groupId>
       <artifactId>fake-sftp-server-lambda</artifactId>
       <version>1.0.1</version>
       <scope>test</scope>
@@ -48,7 +48,7 @@ must use Fake SFTP Server Lambda 1.0.1.
 Fake SFTP Server Lambda is used by wrapping your test code with the method
 `withSftpServer`.
 
-    import static com.github.stefanbirkner.fakesftpserver.lambda.FakeSftpServer.withSftpServer;
+    import static FakeSftpServer.withSftpServer;
 
     public class TestClass {
       @Test
