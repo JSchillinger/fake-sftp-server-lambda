@@ -1,4 +1,4 @@
-package com.github.stefanbirkner.fakesftpserver.lambda;
+package com.privetechnologies.fakesftpserver.lambda;
 
 import org.apache.sshd.common.file.FileSystemFactory;
 import org.apache.sshd.common.session.SessionContext;
@@ -231,6 +231,10 @@ public class FakeSftpServer {
         this.fileSystem = fileSystem;
     }
 
+    public FakeSftpServer() throws IOException {
+        this.fileSystem = createFileSystem();
+    }
+
     /**
      * Returns the port of the SFTP server.
      *
@@ -428,7 +432,7 @@ public class FakeSftpServer {
         return newLinux().build("FakeSftpServer-" + RANDOM.nextInt());
     }
 
-    private Closeable start(
+    public Closeable start(
         int port
     ) throws IOException {
         SshServer server = SshServer.setUpDefaultServer();
@@ -444,6 +448,12 @@ public class FakeSftpServer {
         server.start();
         this.server = server;
         return () -> this.server.close();
+    }
+
+    public void stop() throws IOException {
+        if (this.server != null) {
+            this.server.stop();
+        }
     }
 
     private boolean authenticate(
