@@ -5,7 +5,7 @@
     <groupId>com.privetechnologies</groupId>
     <artifactId>fake-sftp-server-lambda</artifactId>
 
-    <version>2.0.3</version>
+    <version>2.0.4</version>
     <packaging>jar</packaging>
 
     <name>Fake SFTP Server Lambda</name>
@@ -23,7 +23,24 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+
+        <!-- Repository -->
+		<repository.url>nexus.privemanagers.com</repository.url>
+		<namespace>privetechnologies</namespace>
     </properties>
+
+    <distributionManagement>
+		<repository>
+			<id>prive</id>
+			<name>Releases</name>
+			<url>https://${repository.url}/repository/maven-releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>prive</id>
+			<name>Snapshot</name>
+			<url>https://${repository.url}/repository/maven-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 
     <dependencies>
         <dependency>
